@@ -1,0 +1,32 @@
+
+:root {
+  --reveal-duration: 0.8s;
+  --reveal-delay-step: 0.2s;
+  --reveal-easing: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.text-reveal-container {
+  display: inline-block;
+}
+
+.reveal-line {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+}
+
+.reveal-line.is-visible {
+  animation: revealLine var(--reveal-duration) var(--reveal-easing) forwards;
+}
+
+@keyframes revealLine {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
